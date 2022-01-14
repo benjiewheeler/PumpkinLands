@@ -1,6 +1,5 @@
 #include <pumpkinlands.hpp>
 
-ACTION pumpkinlands::hi(name nm) {
-    /* fill in action body */
-    print_f("Name : %\n", nm);
-}
+#include "helper.cpp"
+
+#include "user_actions.cpp"
