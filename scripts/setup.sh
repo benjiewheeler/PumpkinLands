@@ -12,7 +12,7 @@ if [ ! $(which eosio-cpp) ]; then
     rm -rf ./eosio.cdt_1.7.0-1-ubuntu-18.04_amd64.deb
 fi;
 
-if [ ! -d contract  ]; then
+if [ ! -d contracts/game  ]; then
 	eosio-init --project pumpkinlands
-	mv pumpkinlands contract
+	mv pumpkinlands contracts/game
 fi;

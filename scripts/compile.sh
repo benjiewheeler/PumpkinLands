@@ -1,9 +1,9 @@
 # this script is used to format the source code, and to compile the contract, then deploy it to the local chain
 
-clang-format-10 -i contract/include/*.hpp
-clang-format-10 -i contract/src/*.cpp
+clang-format-10 -i contracts/game/include/*.hpp
+clang-format-10 -i contracts/game/src/*.cpp
 
-cd contract
+cd contracts/game
 
 eosio-cpp --abigen -I include -o pumpkinlands.wasm src/pumpkinlands.cpp
 
