@@ -1,4 +1,4 @@
-# PumpkinFarms
+# PumpkinLands
 a simple game contract on WAX blockchain
 
 This game is a proof-of-concept that smart contract game development (on WAX blockchain) does **NOT** have to take months or even years.
