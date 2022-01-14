@@ -70,4 +70,4 @@ cleos set contract pumpkintoken $PWD eosio.token.wasm eosio.token.abi -p pumpkin
 
 # create a token with an arbitrarily large max supply (1 trillion)
 # this max supply will never* be reached so it's irrelevant (*in normal usage)
-cleos push action pumpkintoken create '[ "pumpkinlands", "1000000000000.0000 PLT" ]' -p pumpkintoken@active
+cleos push action pumpkintoken create '[ "pumpkinlands", "1000000000000.000000 PLT" ]' -p pumpkintoken@active
