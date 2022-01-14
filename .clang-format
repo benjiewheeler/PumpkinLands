@@ -1,0 +1,11 @@
+AlignTrailingComments: true
+Language: Cpp
+AllowShortFunctionsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
+BreakBeforeBinaryOperators: false
+IndentWidth: 4
+ColumnLimit: 96
+SortIncludes: false
+NamespaceIndentation: All
+
