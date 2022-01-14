@@ -38,8 +38,10 @@ cleos wallet unlock --password $PASS
 
 cleos wallet import --private-key 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3  # eosio        account private key
 cleos wallet import --private-key 5Ju3RhxeFixCbDxa5NX6KBT8pM4HfgYQC4xSL7wkyNi7WwEqZJq  # pumpkinlands account private key
+cleos wallet import --private-key 5HruJk6FLz46psZmVzNutTQ3JnV6TFCtg11ECyANivJkkmPfmE4  # pumpkintoken account private key
 
 cleos create account eosio pumpkinlands EOS5BCMqTkCVwXXZnNRNTB5HLs4X1Ze7CZ1p438isdxRFrKZxLnip # pumpkinlands account public key
+cleos create account eosio pumpkintoken EOS7zshmzr63UWashb1hc4APthxSMeNFwRDB1uKdSuPLVUNS3jbnD # pumpkintoken account public key
 
 # test accounts
 cleos wallet import --private-key 5K4wc7XGJfLvCafQ3sq5GidziVFpLRb5bjomuoq9sSrp5xd741P  # testaccount1 account private key
@@ -51,3 +53,21 @@ cleos create account eosio testaccount2 EOS6KcBBc4FKPC53vtCd4ZH4yUB2kVG8tRUU8v6X
 cleos create account eosio testaccount3 EOS5TL37f1JFvtHvGfTxTi9bpPi7gNWZ6j2pUH6BSYoL98wdi1opu # testaccount3 account public key
 
 cleos set account permission pumpkinlands active --add-code
+
+# deploy the token contract to the local chain
+clang-format-10 -i contracts/token/include/*/*.hpp
+clang-format-10 -i contracts/token/src/*.cpp
+
+cd contracts/token
+
+if [ ! -f eosio.token.wasm ]; then
+    # compile the token contract
+    eosio-cpp --abigen -I include src/eosio.token.cpp
+fi;
+
+# deploy the compiled contract
+cleos set contract pumpkintoken $PWD eosio.token.wasm eosio.token.abi -p pumpkintoken@active
+
+# create a token with an arbitrarily large max supply (1 trillion)
+# this max supply will never* be reached so it's irrelevant (*in normal usage)
+cleos push action pumpkintoken create '[ "pumpkinlands", "1000000000000.0000 PLT" ]' -p pumpkintoken@active
