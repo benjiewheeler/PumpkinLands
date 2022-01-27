@@ -3,7 +3,7 @@ a simple game contract on WAX blockchain
 
 Many blockchain games (on WAX) spend months (or in some cases 1 full year and still counting) in the "development" phase. Claiming that smart contract development is an extremely complicated process.
 
-This repo/game is an experiment to prove that smart contract game development (on WAX blockchain) does **NOT** have to take months or even years. even by a developer (me - Benjie) with minimal unexperience in C++.
+This repo/game is an experiment to prove that smart contract game development (on WAX blockchain) does **NOT** have to take months or even years. even by a developer (me - Benjie) with minimal experience in C++.
 
 ## Concept
 This game (is / going to be) heavily inspired by [Sunflower Land](https://github.com/sunflower-farmers/sunflower-farmers) (formerly Sunflower Farmers), a pixel-art farming game on Polygon network, where players (farmers) can play to earn Sunflower Farmer Tokens.
